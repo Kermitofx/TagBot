@@ -20,7 +20,7 @@ def done(bot, update):
     bot.send_audio(chat_id=update.message.chat_id, audio=open(str(update.message.chat_id) + ".mp3", 'rb'), timeout=500)
     del chat_id_to_mp3[update.message.chat_id]
     os.remove(str(update.message.chat_id) + ".mp3")
-    bot.send_message(chat_id=update.message.chat_id, text="All done.")
+    bot.send_message(chat_id=update.message.chat_id, text="Aqui Estar Sua Música :) ")
 
 def add_tag(bot, update):
     logger.info("[Handler] add_tag")
@@ -45,7 +45,7 @@ def add_tag(bot, update):
         return
     
     chat_id_to_mp3[update.message.chat_id].tag.save()
-    bot.send_message(chat_id=update.message.chat_id, text=tag[0] + " Foi definido para envie /done pra Salva a Tag: " + " ".join(tag[1:]))
+    bot.send_message(chat_id=update.message.chat_id, text=tag[0] + " Foi definido envie /done pra Salva a Tag: " + " ".join(tag[1:]))
 
 def audio(bot: telegram.Bot, update):
     logger.info("[Handler] audio")
