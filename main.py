@@ -45,7 +45,7 @@ def add_tag(bot, update):
         return
     
     chat_id_to_mp3[update.message.chat_id].tag.save()
-    bot.send_message(chat_id=update.message.chat_id, text=tag[0] + " Foi definido para: " + " ".join(tag[1:]))
+    bot.send_message(chat_id=update.message.chat_id, text=tag[0] + " Foi definido para envie /done pra Salva a Tag: " + " ".join(tag[1:]))
 
 def audio(bot: telegram.Bot, update):
     logger.info("[Handler] audio")
